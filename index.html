@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
     <style>
+        /* Your existing styles */
         body {
             background: #ffcc00;
             color: #00091B;
@@ -209,6 +210,12 @@
             justify-content: center;
             align-items: center;
         }
+
+        /* Disable button styles */
+        .button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
     </style>
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
@@ -216,9 +223,6 @@
            emailjs.init("dM2ZB8P9LvoXAkJyq");
         })();
     </script>
-    <style>
-        /* Your existing styles */
-    </style>
 </head>
 <body>
     <div class="wrapper">
@@ -252,7 +256,7 @@
                                         <textarea class="field-element" name="message" required></textarea>
                                     </div>
                                     <div class="form-button-wrapper form-button-wrapper--align-center">
-                                        <input class="button" type="submit" value="Submit">
+                                        <input id="submitButton" class="button" type="submit" value="Submit">
                                     </div>
                                 </div>
                             </form>
@@ -265,23 +269,33 @@
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent default form submission
-
+            
+            // Get the submit button
+            var submitButton = document.getElementById('submitButton');
+            
+            // Disable the button
+            submitButton.disabled = true;
+            
             // Collect form data
             var formData = {
                 business: this.business.value,
                 name: this.from_name.value,
-                location:this.location.value,
+                location: this.location.value,
                 message: this.message.value
             };
 
             // Send the email using EmailJS
             emailjs.send('service_xq4rgnn', 'template_ci2b7bd', formData)
                 .then(function(response) {
-                   console.log('SUCCESS!', response.status, response.text);
-                   alert("Message sent successfully!");
+                    console.log('Success:', response);
+                    alert('Message sent successfully!');
                 }, function(error) {
-                   console.log('FAILED...', error);
-                   alert("Failed to send the message. Please try again.");
+                    console.log('Failed:', error);
+                    alert('Message failed to send. Please try again later.');
+                })
+                .finally(function() {
+                    // Re-enable the button
+                    submitButton.disabled = false;
                 });
         });
     </script>
