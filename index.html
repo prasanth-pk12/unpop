@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            background: #ffcc00;
+            color: #00091B;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        @keyframes fadeIn {
+            from {top: 20%; opacity: 0;}
+            to {top: 100%; opacity: 1;}
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {top: 20%; opacity: 0;}
+            to {top: 100%; opacity: 1;}
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: row;
+            width: 92vw;
+            height: 96vh;
+            justify-content: space-around;
+            align-items: center; /* Center items vertically */
+            animation: fadeIn 1000ms ease;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 100px;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 0;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        .dot {
+            color: #00091B;
+        }
+
+        p {
+            text-align: center;
+            margin: 18px;
+            font-family: 'Muli', sans-serif;
+            font-weight: normal;
+            font-size: 38px;
+        }
+
+        .icons {
+            text-align: center;
+        }
+
+        .icons i {
+            color: #00091B;
+            background: #fff;
+            height: 15px;
+            width: 15px;
+            padding: 13px;
+            margin: 0 10px;
+            border-radius: 50px;
+            border: 2px solid #fff;
+            transition: all 200ms ease;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .icons i:hover, .icons i:active {
+            color: #fff;
+            background: none;
+            cursor: pointer !important;
+            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            text-decoration: none;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
+            font-family: 'Karla', 'Arial', sans-serif;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #section3 {
+            padding: 30px;
+            background-color: #f5f5f5; /* Light gray background */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            max-width: 800px;
+            margin: 0 auto;
+            height: 63vh;
+            width: 28vw;
+        }
+
+        #section3 h1 {
+            font-weight: normal;
+            color: #444;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        #contactForm {
+            font-family: 'Karla', 'Arial', sans-serif;
+        }
+
+        .form-wrapper .field-list {
+            line-height: normal;
+        }
+
+        .form-wrapper .field-list .field {
+            position: relative;
+            margin: 0 0 24px;
+        }
+
+        .form-wrapper .field-list .fields {
+            margin: 0 0 0 -2%;
+        }
+
+        .form-wrapper .field-list .fields .title, .form-wrapper .field-list .fields .description, .form-wrapper .field-list .fields .field, .form-wrapper .field-list .fields .field-error {
+            margin-left: 2%;
+        }
+
+        .form-wrapper .field-list .fields .field {
+            float: left;
+        }
+
+        .form-wrapper .field-list .fields.name .field {
+            width: 48%;
+        }
+
+        .form-wrapper .field-list .field .field-element {
+            width: 100%;
+            padding: 12px;
+            margin: 6px 0 4px;
+            border: 1px solid #ccc;
+            background: #fafafa;
+            font-family: sans-serif;
+            font-size: 12px;
+            line-height: normal;
+            box-sizing: border-box;
+            border-radius: 2px;
+        }
+
+        .form-wrapper .field-list .field .caption {
+            font-size: 12px;
+        }
+
+        fieldset {
+            border: none;
+        }
+
+        .form-wrapper .field-list legend {
+            display: none;
+        }
+
+        input:focus {
+            background-color: #fff !important;
+            cursor: auto;
+        }
+
+        .form-button-wrapper {
+            text-align: center;
+        }
+
+        .form-button-wrapper input.button {
+            background-color: #202020;
+            color: #fff;
+            text-transform: uppercase;
+            font-family: 'Karla', 'Arial', sans-serif;
+            font-size: 20px;
+            letter-spacing: 2px;
+            border: none;
+            padding: 1em 2.5em;
+            transition: all 0.2s ease;
+            border-radius: 2px;
+        }
+
+        .form-button-wrapper input.button:hover {
+            cursor: pointer;
+        }
+
+        .form-button-wrapper input.button:focus {
+            background-color: #202020 !important;
+            opacity: .85;
+        }
+
+        .left-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+           emailjs.init("dM2ZB8P9LvoXAkJyq");
+        })();
+    </script>
+    <style>
+        /* Your existing styles */
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="left-side">
+            <h1>UNPOP<span class="dot">.</span>SHOP</h1>
+            <p>Dropping soon...</p>
+        </div>
+        <div class="right-side">
+            <div id="section3">
+                <a id="contact" class="js--wp-3" name="contact"></a>
+                <div class="row">
+                    <div class="form-wrapper">
+                        <h1 class="contact-title">Contact</h1>
+                        <div class="form-inner-wrapper">
+                            <form id="contactForm">
+                                <div class="field-list clear">
+                                    <div class="form-item field required">
+                                        <label class="title" for="name">Name <span class="required">*</span></label>
+                                        <input class="field-element" name="from_name" type="text" spellcheck="false" required>
+                                    </div>
+                                    <div class="form-item field required">
+                                        <label class="title" for="business">Business <span class="required">*</span></label>
+                                        <input class="field-element" name="business" type="text" spellcheck="false" required>
+                                    </div>
+                                    <div class="form-item field required">
+                                        <label class="title" for="location">Location <span class="required">*</span></label>
+                                        <input class="field-element" name="location" type="text" spellcheck="false" required>
+                                    </div>
+                                    <div class="form-item field textarea required">
+                                        <label class="title" for="message">Business Description <span class="required">*</span></label>
+                                        <textarea class="field-element" name="message" required></textarea>
+                                    </div>
+                                    <div class="form-button-wrapper form-button-wrapper--align-center">
+                                        <input class="button" type="submit" value="Submit">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Collect form data
+            var formData = {
+                business: this.business.value,
+                name: this.from_name.value,
+                location:this.location.value,
+                message: this.message.value
+            };
+
+            // Send the email using EmailJS
+            emailjs.send('service_xq4rgnn', 'template_ci2b7bd', formData)
+                .then(function(response) {
+                   console.log('SUCCESS!', response.status, response.text);
+                   alert("Message sent successfully!");
+                }, function(error) {
+                   console.log('FAILED...', error);
+                   alert("Failed to send the message. Please try again.");
+                });
+        });
+    </script>
+</body>
+</html>
