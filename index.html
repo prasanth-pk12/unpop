@@ -17,7 +17,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         @keyframes fadeIn {
@@ -224,10 +224,17 @@
             }
             #section3{
                 width: 90%;
-                height: 93%;
+                height: auto;
             }
             .right-side{
                 width: 100%;
+                order: 2;
+                width: 100%;
+                /* overflow-y: scroll; */
+            }
+            .left-side{
+                padding-top: 100px;
+                margin-bottom: 100px;
             }
             h1{
                 font-size: 3rem;
