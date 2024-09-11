@@ -283,12 +283,16 @@
                                         <input class="field-element" name="from_name" type="text" spellcheck="false" required>
                                     </div>
                                     <div class="form-item field required">
-                                        <label class="title" for="business">Business <span class="required">*</span></label>
-                                        <input class="field-element" name="business" type="text" spellcheck="false" required>
+                                        <label class="title" for="number">Phone Number <span class="required">*</span></label>
+                                        <input class="field-element" name="from_number" type="text" spellcheck="false" required>
                                     </div>
                                     <div class="form-item field required">
                                         <label class="title" for="location">Location <span class="required">*</span></label>
                                         <input class="field-element" name="location" type="text" spellcheck="false" required>
+                                    </div>
+                                    <div class="form-item field required">
+                                        <label class="title" for="business">Business <span class="required">*</span></label>
+                                        <input class="field-element" name="business" type="text" spellcheck="false" required>
                                     </div>
                                     <div class="form-item field textarea required">
                                         <label class="title" for="message">Business Description <span class="required">*</span></label>
@@ -319,6 +323,7 @@
             var formData = {
                 business: this.business.value,
                 name: this.from_name.value,
+                number:this.from_number.value,
                 location: this.location.value,
                 message: this.message.value
             };
