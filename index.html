@@ -240,6 +240,12 @@
             margin-top: 2rem;
         }
     </style>
+     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+     <script>
+         (function(){
+            emailjs.init("dM2ZB8P9LvoXAkJyq");
+         })();
+     </script>
 </head>
 <body>
     <header>
@@ -287,7 +293,7 @@
         <section id="contactForm" class="contact" aria-labelledby="contact-heading">
             <div class="container">
                 <h2 id="contact-heading">Register Your Interest</h2>
-                <form>
+                <form id="contactFormElement">
                     <div class="form-group">
                         <label for="name">Name <span aria-hidden="true">*</span></label>
                         <input type="text" id="name" name="from_name" required aria-required="true">
@@ -309,7 +315,7 @@
                         <textarea id="message" name="message" required aria-required="true"></textarea>
                     </div>
                     <div class="form-submit">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" id="submitButton" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
             </div>
@@ -317,10 +323,13 @@
     </main>
 
     <script>
-        document.querySelector('form').addEventListener('submit', function(event) {
+        document.getElementById('contactFormElement').addEventListener('submit', function(event) {
             event.preventDefault();
             
-            var formData = {
+            const submitButton = document.getElementById('submitButton');
+            submitButton.disabled = true;
+            
+            const formData = {
                 business: this.business.value,
                 name: this.from_name.value,
                 number: this.from_number.value,
@@ -328,10 +337,20 @@
                 message: this.message.value
             };
 
-            // Here you would typically send the form data to your server or a service like EmailJS
-            console.log('Form submitted:', formData);
-            alert('Thank you for your interest! We will contact you soon.');
-            this.reset();
+            emailjs.send('service_xq4rgnn', 'template_ci2b7bd', formData)
+                .then(function(response) {
+                    console.log('Success:', response);
+                    alert('Message sent successfully!');
+                    // Optional: Reset the form after successful submission
+                    document.getElementById('contactFormElement').reset();
+                })
+                .catch(function(error) {
+                    console.log('Failed:', error);
+                    alert('Message failed to send. Please try again later.');
+                })
+                .finally(function() {
+                    submitButton.disabled = false;
+                });
         });
     </script>
 </body>
