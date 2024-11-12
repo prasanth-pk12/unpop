@@ -3,344 +3,335 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unpop</title>
+    <title>Unpop.Shop - Platform for Homegrown and Unbranded Products</title>
     <link rel="apple-touch-icon" sizes="180x180" href="./logo/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./logo/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./logo/favicon-16x16.png">
-    <link rel="manifest" href="./logo/site.webmanifest">
-    <meta name="description" content="One stop solution...">
+    <link rel="manifest" href="./site.webmanifest">
+    <meta name="description" content="Unpop.Shop - The platform for homegrown and unbranded products. Find quality and save money.">
     <style>
-        /* Your existing styles */
-        body {
-            background: #ffcc00;
-            color: #00091B;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow-x: hidden;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;600&display=swap');
 
-        @keyframes fadeIn {
-            from {top: 20%; opacity: 0;}
-            to {top: 100%; opacity: 1;}
-        }
-
-        @-webkit-keyframes fadeIn {
-            from {top: 20%; opacity: 0;}
-            to {top: 100%; opacity: 1;}
-        }
-
-        .wrapper {
-            display: flex;
-            flex-direction: row;
-            width: 92vw;
-            height: 100%;
-            justify-content: space-around;
-            align-items: center; /* Center items vertically */
-            animation: fadeIn 1000ms ease;
-            /* position: relative; */
-        }
-        
-
-        h1 {
-            font-size: 6rem;
-            font-family: 'Poppins', sans-serif;
-            margin-bottom: 0;
-            line-height: 1;
-            font-weight: 700;
-        }
-
-        .dot {
-            color: #00091B;
-        }
-
-        p {
-            text-align: center;
-            margin: 18px;
-            font-family: 'Muli', sans-serif;
-            font-weight: normal;
-            font-size: 38px;
-        }
-
-        .icons {
-            text-align: center;
-        }
-
-        .icons i {
-            color: #00091B;
-            background: #fff;
-            height: 15px;
-            width: 15px;
-            padding: 13px;
-            margin: 0 10px;
-            border-radius: 50px;
-            border: 2px solid #fff;
-            transition: all 200ms ease;
-            text-decoration: none;
-            position: relative;
-        }
-
-        .icons i:hover, .icons i:active {
-            color: #fff;
-            background: none;
-            cursor: pointer !important;
-            transform: scale(1.2);
-            -webkit-transform: scale(1.2);
-            text-decoration: none;
+        :root {
+            --yellow-400: #facc15;
+            --yellow-500: #eab308;
+            --gray-900: #111827;
+            --gray-800: #1f2937;
         }
 
         * {
-            padding: 0;
             margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
-        html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
-            font-family: 'Karla', 'Arial', sans-serif;
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: #333;
         }
 
-        .hidden {
-            display: none;
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
 
-        #section3 {
-            padding: 30px;
-            background-color: #f5f5f5; /* Light gray background */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            max-width: 800px;
-            margin: 0 auto;
-            height: 63%;
-            width: 28vw;
-        }
-
-        #section3 h1 {
-            font-weight: normal;
-            color: #444;
-            font-size: 32px;
-            text-align: center;
-        }
-
-        #contactForm {
-            font-family: 'Karla', 'Arial', sans-serif;
-        }
-
-        .form-wrapper .field-list {
-            line-height: normal;
-        }
-
-        .form-wrapper .field-list .field {
-            position: relative;
-            margin: 0 0 24px;
-        }
-
-        .form-wrapper .field-list .fields {
-            margin: 0 0 0 -2%;
-        }
-
-        .form-wrapper .field-list .fields .title, .form-wrapper .field-list .fields .description, .form-wrapper .field-list .fields .field, .form-wrapper .field-list .fields .field-error {
-            margin-left: 2%;
-        }
-
-        .form-wrapper .field-list .fields .field {
-            float: left;
-        }
-
-        .form-wrapper .field-list .fields.name .field {
-            width: 48%;
-        }
-
-        .form-wrapper .field-list .field .field-element {
+        .container {
             width: 100%;
-            padding: 12px;
-            margin: 6px 0 4px;
-            border: 1px solid #ccc;
-            background: #fafafa;
-            font-family: sans-serif;
-            font-size: 12px;
-            line-height: normal;
-            box-sizing: border-box;
-            border-radius: 2px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
 
-        .form-wrapper .field-list .field .caption {
-            font-size: 12px;
+        header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 1rem;
+            z-index: 50;
         }
 
-        fieldset {
-            border: none;
-        }
-
-        .form-wrapper .field-list legend {
-            display: none;
-        }
-
-        input:focus {
-            background-color: #fff !important;
-            cursor: auto;
-        }
-
-        .form-button-wrapper {
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
             text-align: center;
-        }
-
-        .form-button-wrapper input.button {
-            background-color: #202020;
-            color: #fff;
-            text-transform: uppercase;
-            font-family: 'Karla', 'Arial', sans-serif;
-            font-size: 20px;
-            letter-spacing: 2px;
+            text-decoration: none;
             border: none;
-            padding: 1em 2.5em;
-            transition: all 0.2s ease;
-            border-radius: 2px;
-        }
-
-        .form-button-wrapper input.button:hover {
+            border-radius: 0.25rem;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
-        .form-button-wrapper input.button:focus {
-            background-color: #202020 !important;
-            opacity: .85;
+        .btn-primary {
+            background-color: var(--yellow-400);
+            color: #000;
         }
 
-        .left-side {
+        .btn-primary:hover {
+            background-color: var(--yellow-500);
+        }
+
+        .hero {
+            background-color: var(--yellow-400);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 2rem 0;
+        }
+
+        .hero-content {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            text-align: center;
         }
 
-        /* Disable button styles */
-        .button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
-        @media only screen and (max-width: 1024px) {
-            .wrapper{
-                flex-direction: column;
-            }
-            #section3{
-                width: 90%;
-                height: auto;
-            }
-            .right-side{
-                width: 100%;
-                order: 2;
-                width: 100%;
-                /* overflow-y: scroll; */
-            }
-            .left-side{
-                padding-top: 100px;
-                margin-bottom: 100px;
-            }
-            h1{
-                font-size: 3rem;
-            }
-            p{
-                font-size: 2rem;
+        @media (min-width: 1024px) {
+            .hero-content {
+                flex-direction: row;
+                text-align: left;
+                justify-content: space-between;
+                align-items: center;
             }
         }
-        @media only screen and (min-width: 600px) and (max-width: 900px) {
-            h1{
+
+        .hero-text {
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-text {
+                flex: 1;
+                margin-bottom: 0;
+                margin-right: 2rem;
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        @media (min-width: 1024px) {
+            .hero h1 {
                 font-size: 6rem;
             }
-            p{
-                font-size: 3rem;
+        }
+
+        .hero h1 span {
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #4b5563;
+            max-width: 600px;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-image {
+                flex: 1;
+                max-width: 50%;
             }
         }
+
+        .about {
+            background-color: var(--gray-900);
+            color: #fff;
+            padding: 4rem 0;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .about p {
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 1.25rem;
+        }
+
+        .features {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .feature {
+            background-color: var(--gray-800);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact {
+            background-color: var(--yellow-400);
+            padding: 4rem 0;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #000;
+        }
+
+        .contact form {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            text-align: center;
+            margin-top: 2rem;
+        }
     </style>
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        (function(){
-           emailjs.init("dM2ZB8P9LvoXAkJyq");
-        })();
-    </script>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="left-side">
-            <h1>UNPOP<span class="dot">.</span>SHOP</h1>
-            <p>Dropping soon...</p>
-        </div>
-        <div class="right-side">
-            <div id="section3">
-                <a id="contact" class="js--wp-3" name="contact"></a>
-                <div class="row">
-                    <div class="form-wrapper">
-                        <h1 class="contact-title">Contact</h1>
-                        <div class="form-inner-wrapper">
-                            <form id="contactForm">
-                                <div class="field-list clear">
-                                    <div class="form-item field required">
-                                        <label class="title" for="name">Name <span class="required">*</span></label>
-                                        <input class="field-element" name="from_name" type="text" spellcheck="false" required>
-                                    </div>
-                                    <div class="form-item field required">
-                                        <label class="title" for="number">Phone Number <span class="required">*</span></label>
-                                        <input class="field-element" name="from_number" type="text" spellcheck="false" required>
-                                    </div>
-                                    <div class="form-item field required">
-                                        <label class="title" for="location">Location <span class="required">*</span></label>
-                                        <input class="field-element" name="location" type="text" spellcheck="false" required>
-                                    </div>
-                                    <div class="form-item field required">
-                                        <label class="title" for="business">Business <span class="required">*</span></label>
-                                        <input class="field-element" name="business" type="text" spellcheck="false" required>
-                                    </div>
-                                    <div class="form-item field textarea required">
-                                        <label class="title" for="message">Business Description <span class="required">*</span></label>
-                                        <textarea class="field-element" name="message" required></textarea>
-                                    </div>
-                                    <div class="form-button-wrapper form-button-wrapper--align-center">
-                                        <input id="submitButton" class="button" type="submit" value="Submit">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+    <header>
+        <button class="btn btn-primary" onclick="document.getElementById('contactForm').scrollIntoView({behavior: 'smooth'})">
+            Register
+        </button>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 id="hero-heading">UNPOP<span>.</span>SHOP</h1>
+                        <p>Heros helps you to find quality and save money</p>
+                    </div>
+                    <img src="./images/image.png" alt="Unpop.Shop showcase" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="about" aria-labelledby="about-heading">
+            <div class="container">
+                <h2 id="about-heading">Struggling to Enter the Digital Space?</h2>
+                <p>We're the Platform for Homegrown and Unbranded Products!</p>
+                <p>At Unpop.Shop, we're not just another e-commerce site—we're dedicated exclusively to promoting homegrown, unbranded products. If you're a small business looking for a space where your unique offerings can shine, we're here to help.</p>
+                <h3>Why Choose Us?</h3>
+                <div class="features">
+                    <div class="feature">
+                        <p>🔹 Exclusivity – We only feature homegrown and unbranded products, giving you a platform tailored to your needs.</p>
+                    </div>
+                    <div class="feature">
+                        <p>🔹 Simple Setup – Launch your online store quickly and easily with our user-friendly tools.</p>
+                    </div>
+                    <div class="feature">
+                        <p>🔹 Focused Audience – Reach customers who appreciate and seek out authentic, local, and small-scale products.</p>
+                    </div>
+                    <div class="feature">
+                        <p>🔹 Affordable Pricing – We keep costs low so that you can grow your business without breaking the bank.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+
+        <section id="contactForm" class="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <h2 id="contact-heading">Register Your Interest</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name <span aria-hidden="true">*</span></label>
+                        <input type="text" id="name" name="from_name" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="number">Phone Number <span aria-hidden="true">*</span></label>
+                        <input type="tel" id="number" name="from_number" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location <span aria-hidden="true">*</span></label>
+                        <input type="text" id="location" name="location" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="business">Business <span aria-hidden="true">*</span></label>
+                        <input type="text" id="business" name="business" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Business Description <span aria-hidden="true">*</span></label>
+                        <textarea id="message" name="message" required aria-required="true"></textarea>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
             
-            // Get the submit button
-            var submitButton = document.getElementById('submitButton');
-            
-            // Disable the button
-            submitButton.disabled = true;
-            
-            // Collect form data
             var formData = {
                 business: this.business.value,
                 name: this.from_name.value,
-                number:this.from_number.value,
+                number: this.from_number.value,
                 location: this.location.value,
                 message: this.message.value
             };
 
-            // Send the email using EmailJS
-            emailjs.send('service_xq4rgnn', 'template_ci2b7bd', formData)
-                .then(function(response) {
-                    console.log('Success:', response);
-                    alert('Message sent successfully!');
-                }, function(error) {
-                    console.log('Failed:', error);
-                    alert('Message failed to send. Please try again later.');
-                })
-                .finally(function() {
-                    // Re-enable the button
-                    submitButton.disabled = false;
-                });
+            // Here you would typically send the form data to your server or a service like EmailJS
+            console.log('Form submitted:', formData);
+            alert('Thank you for your interest! We will contact you soon.');
+            this.reset();
         });
     </script>
 </body>
