@@ -1,0 +1,43 @@
+.about {
+  background-color: var(--gray-900);
+  color: #fff;
+  padding: 4rem 0;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.about p {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.about h3 {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.features {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.feature {
+  background-color: var(--gray-800);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+}
