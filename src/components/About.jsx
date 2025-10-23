@@ -21,12 +21,12 @@ const About = () => {
   ]
 
   return (
-    <section className="about" aria-labelledby="about-heading">
+    <section id="about" className="about" aria-labelledby="about-heading">
       <div className="container">
-        <h2 id="about-heading">Struggling to Enter the Digital Space?</h2>
+        <h2 id="about-heading">About Unpop.Shop</h2>
         <p>We're the Platform for Homegrown and Unbranded Products!</p>
         <p>
-          At Unpop.Shop, we're not just another e-commerce site—we're dedicated exclusively to promoting homegrown, unbranded products. If you're a small business looking for a space where your unique offerings can shine, we're here to help.
+          At Unpop.Shop, we're dedicated exclusively to promoting homegrown, unbranded products. If you're a small business looking for a space where your unique offerings can shine, we're here to help.
         </p>
         <h3>Why Choose Us?</h3>
         <div className="features">

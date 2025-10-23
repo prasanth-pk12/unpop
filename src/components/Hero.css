@@ -1,72 +1,387 @@
+/* Hero Section */
 .hero {
-  background-color: var(--yellow-400);
-  min-height: 100vh;
+  min-height: calc(100vh - 10rem); /* Subtract top and bottom padding (8rem + 2rem) */
+  position: relative;
+  overflow: hidden;
+  /* warm golden background with subtle texture */
+  background: linear-gradient(180deg, #f3c94a 0%, #eab308 50%, #d79a06 100%);
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 8rem 0 2rem 0; /* Add top padding to account for fixed header */
 }
 
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Mandala Patterns */
+.mandala-pattern {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+
+
+.mandala-left {
+  bottom: -100px; /* Half hidden at bottom */
+  left: -300px;   /* Half hidden on left side */
+  width: 400px;
+  height: 400px;
+}
+
+.mandala-right {
+  top: -100px;    /* Half hidden at top */
+  right: -300px;  /* Half hidden on right side */
+  width: 400px;
+  height: 400px;
+}
+
+.mandala-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* About Button */
+.about-button-container {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+}
+
+.about-button {
+  background: white;
+  color: #2D3748;
+  border: none;
+  border-radius: 25px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.about-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Main Content */
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .hero-content {
-    flex-direction: row;
-    text-align: left;
-    justify-content: space-between;
-    align-items: center;
-  }
+  min-height: calc(100vh - 10rem); /* Match hero section height calculation */
+  position: relative;
+  z-index: 3;
 }
 
 .hero-text {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
-@media (min-width: 1024px) {
-  .hero-text {
-    flex: 1;
-    margin-bottom: 0;
-    margin-right: 2rem;
-  }
-}
-
-.hero h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 4rem;
-  font-weight: 700;
+.hero-title {
+  font-size: clamp(4rem, 12vw, 8rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #2d3748, #4a5568, #2d3748);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
-  line-height: 1.2;
+  line-height: 0.9;
+  letter-spacing: -2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
-@media (min-width: 1024px) {
-  .hero h1 {
-    font-size: 6rem;
-  }
+.hero-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #eab308, transparent);
+  border-radius: 2px;
 }
 
-.hero h1 span {
-  color: #fff;
+.hero-tagline {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 500;
+  color: #4a5568;
+  margin: 2rem 0 0 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+  opacity: 0.9;
 }
 
-.hero p {
-  font-size: 1.5rem;
-  color: #4b5563;
-  max-width: 600px;
+.hero-tagline::before {
+  content: '✦';
+  position: absolute;
+  left: -2rem;
+  color: #eab308;
+  font-size: 1rem;
 }
 
-.hero-image {
+.hero-tagline::after {
+  content: '✦';
+  position: absolute;
+  right: -2rem;
+  color: #eab308;
+  font-size: 1rem;
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 400;
+  color: #4a5568;
+  margin: 1.5rem 0 0 0;
+  letter-spacing: 1px;
+  font-style: italic;
+  opacity: 0.8;
+  position: relative;
+}
+
+/* Peacock Visual */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.peacock-container {
+  width: 400px;
+  height: 250px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.peacock-svg {
   width: 100%;
-  max-width: 800px;
-  height: auto;
+  height: 100%;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.15));
+  transition: all 0.3s ease;
 }
 
-@media (min-width: 1024px) {
-  .hero-image {
-    flex: 1;
-    max-width: 50%;
+.peacock-container:hover .peacock-svg {
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.2));
+}
+
+.peacock-feathers {
+  animation: sway 3s ease-in-out infinite alternate;
+}
+
+@keyframes sway {
+  0% { transform: rotate(-2deg); }
+  100% { transform: rotate(2deg); }
+}
+
+/* Additional decorative elements */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 150px 150px, 200px 200px, 100px 100px;
+  animation: float 15s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .mandala-left {
+    bottom: -100px; /* Half hidden at bottom */
+    left: -300px;   /* Half hidden on left side */
+    width: 400px;
+    height: 400px;
+  }
+  
+  .mandala-right {
+    width: 250px;
+    height: 250px;
+    top: -125px;
+    right: -125px;
+  }
+  
+  .peacock-container {
+    width: 250px;
+    height: 150px;
   }
 }
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh; /* Reduced min-height for tablet/mobile */
+    padding: 6rem 0 2rem 0; /* Reduced top padding */
+  }
+  
+  .hero-content {
+    min-height: auto; /* Let content determine height naturally */
+    justify-content: flex-start; /* Align content to top */
+    padding-top: 1.5rem; /* Add some spacing from top */
+  }
+  
+  .hero-container {
+    padding: 0 1rem;
+  }
+  
+  .mandala-left {
+    bottom: -100px; /* Half hidden at bottom */
+    left: -300px;   /* Half hidden on left side */
+    width: 400px;
+    height: 400px;
+  }
+  
+  .mandala-right {
+    width: 200px;
+    height: 200px;
+    top: -100px;
+    right: -100px;
+  }
+  
+  .hero-text {
+    margin-bottom: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1.3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin: 1rem 0 0 0;
+  }
+  
+  .peacock-container {
+    width: 300px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 70vh; /* Reduced min-height for mobile */
+    padding: 6rem 0 1rem 0; /* Reduced top padding for mobile */
+  }
+  
+  .hero-content {
+    min-height: auto; /* Let content determine height naturally */
+    justify-content: flex-start; /* Align content to top instead of center */
+    padding-top: 2rem; /* Add some spacing from top */
+  }
+  
+  .hero-container {
+    padding: 0 0.8rem;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem;
+    line-height: 1.1;
+  }
+  
+  .hero-tagline {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin: 0.8rem 0 0 0;
+  }
+  
+  .mandala-left {
+    bottom: -100px; /* Half hidden at bottom */
+    left: -300px;   /* Half hidden on left side */
+    width: 400px;
+    height: 400px;
+    opacity: 0.2;
+  }
+  
+  .mandala-right {
+    width: 180px;
+    height: 180px;
+    top: -90px;
+    right: -90px;
+    opacity: 0.2;
+  }
+  
+  .peacock-container {
+    width: 260px;
+    height: 180px;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .hero {
+    min-height: 65vh; /* Further reduced for very small screens */
+    padding: 5.5rem 0 1rem 0; /* Reduced top padding */
+  }
+  
+  .hero-content {
+    min-height: auto; /* Let content determine height */
+    padding-top: 1rem; /* Minimal top spacing */
+  }
+  
+  .hero-container {
+    padding: 0 0.5rem;
+  }
+  
+  .hero-title {
+    font-size: 2.4rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.85rem;
+    margin: 0.6rem 0 0 0;
+  }
+  
+  .peacock-container {
+    width: 240px;
+    height: 160px;
+  }
+}
+
