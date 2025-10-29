@@ -7,8 +7,8 @@ const Products = () => {
       id: 1,
       title: "Athangudi Tiles",
       image: "/images/tiles.png",
-      file: null, // PDF file path
-      type: "coming-soon"
+      file: "/documents/athangudi_tiles.pdf", // PDF file path
+      type: "pdf"
     },
     {
       id: 2,
