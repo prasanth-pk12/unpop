@@ -4,10 +4,10 @@ import './Brands.css';
 const Brands = () => {
   // Sample brand logos/names - you can replace these with actual brand data
   const brands = [
-    { name: "EcoTech", logo: "/public/images/brand1.png" },
-    { name: "PureLife", logo: "/public/images/brand2.png"  },
-    { name: "NatureCraft", logo: "/public/images/brand3.png" },
-    { name: "FreshMade", logo: "/public/images/brand4.png"  }
+    { name: "EcoTech", logo: "/images/brand1.png" },
+    { name: "PureLife", logo: "/images/brand2.png"  },
+    { name: "NatureCraft", logo: "/images/brand3.png" },
+    { name: "FreshMade", logo: "/images/brand4.png"  }
   ];
 
   return (
