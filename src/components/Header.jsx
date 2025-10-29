@@ -5,9 +5,11 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId) || document.querySelector(`.${sectionId}`);
+    const element = document.getElementById(sectionId) || 
+                   document.querySelector(`.${sectionId}`) ||
+                   document.querySelector(`#${sectionId}`);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     // Close mobile menu after navigation
     setIsMobileMenuOpen(false);
@@ -37,8 +39,10 @@ const Header = () => {
         </button>
         
         <nav className={`nav-buttons ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-          <button onClick={() => scrollToSection('about')} className="nav-btn">About</button>
           <button onClick={() => scrollToSection('products')} className="nav-btn">Products</button>
+          <button onClick={() => scrollToSection('brands')} className="nav-btn">Brands</button>
+          <button onClick={() => scrollToSection('about')} className="nav-btn">About</button>
+          <button onClick={() => scrollToSection('footer')} className="nav-btn">Contact</button>
           <button onClick={() => scrollToSection('contactForm')} className="nav-btn register-nav">Register</button>
         </nav>
       </div>

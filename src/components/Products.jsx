@@ -5,27 +5,23 @@ const Products = () => {
   const products = [
     {
       id: 1,
-      title: "Handcrafted Jewelry",
-      image: "/images/hero_card.png", // Using available image as placeholder
-      description: "Unique handmade jewelry pieces"
+      title: "Athangudi Tiles",
+      image: "/images/tiles.png", // Using available image as placeholder
     },
     {
       id: 2,
-      title: "Organic Skincare",
-      image: "/images/hero_card.png", // Using available image as placeholder
-      description: "Natural and organic beauty products"
+      title: "Indian Spices",
+      image: "/images/spices.png", // Using available image as placeholder
     },
     {
       id: 3,
-      title: "Artisan Crafts",
-      image: "/images/hero_card.png", // Using available image as placeholder
-      description: "Traditional handicrafts and artworks"
+      title: "Handmade soap",
+      image: "/images/soup.png", // Using available image as placeholder
     },
     {
       id: 4,
-      title: "Home Decor",
-      image: "/images/hero_card.png", // Using available image as placeholder
-      description: "Handmade home decoration items"
+      title: "Handicrafts",
+      image: "/images/handcraft.png", // Using available image as placeholder
     }
   ];
 

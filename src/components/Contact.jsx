@@ -63,8 +63,9 @@ const Contact = () => {
 
   return (
     <section id="contactForm" className="contact" aria-labelledby="contact-heading">
+      <div id="contact"></div> {/* Additional anchor for contact navigation */}
+        <h2 id="contact-heading">Register Your Product</h2>
       <div className="container">
-        <h2 id="contact-heading">Register Your Interest</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">
