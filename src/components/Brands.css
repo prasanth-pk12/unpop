@@ -199,8 +199,150 @@
   letter-spacing: 0.5px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Enhanced Responsive Design */
+
+/* Large Desktop (1400px+) */
+@media (min-width: 1400px) {
+  .brands {
+    padding: 8rem 0;
+  }
+  
+  .brands-container {
+    padding: 0 3rem;
+  }
+  
+  .brands-heading {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .brands-description {
+    font-size: 1.4rem;
+    margin-bottom: 5rem;
+    max-width: 800px;
+  }
+  
+  .brand-item {
+    min-width: 220px;
+    padding: 2.5rem 2rem;
+  }
+  
+  .brand-logo {
+    width: 90%;
+    height: 90%;
+  }
+  
+  .brands-track {
+    gap: 3rem;
+  }
+}
+
+/* Desktop (1200px - 1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .brands {
+    padding: 7rem 0;
+  }
+  
+  .brands-heading {
+    font-size: 4rem;
+  }
+  
+  .brands-description {
+    font-size: 1.3rem;
+    margin-bottom: 4.5rem;
+  }
+  
+  .brand-item {
+    min-width: 200px;
+    padding: 2.2rem 1.8rem;
+  }
+}
+
+/* Large Tablet (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .brands {
+    padding: 6rem 0;
+  }
+  
+  .brands-container {
+    padding: 0 2rem;
+  }
+  
+  .brands-heading {
+    font-size: 3.5rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .brands-description {
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    max-width: 650px;
+  }
+  
+  .brand-item {
+    min-width: 180px;
+    padding: 2rem 1.5rem;
+  }
+  
+  .brand-logo {
+    width: 85%;
+    height: 85%;
+  }
+  
+  .brands-track {
+    gap: 2.5rem;
+    animation-duration: 22s;
+  }
+}
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .brands {
+    padding: 5rem 0;
+  }
+  
+  .brands-container {
+    padding: 0 1.5rem;
+  }
+  
+  .brands-heading {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .brands-description {
+    font-size: 1.1rem;
+    margin-bottom: 3.5rem;
+    max-width: 600px;
+  }
+  
+  .brand-item {
+    min-width: 160px;
+    padding: 1.8rem 1.3rem;
+  }
+  
+  .brand-logo {
+    width: 80%;
+    height: 80%;
+  }
+  
+  .brand-name {
+    font-size: 0.95rem;
+  }
+  
+  .brands-track {
+    gap: 2rem;
+    animation-duration: 20s;
+  }
+  
+  .brands-loading {
+    max-width: 280px;
+    padding: 1.8rem;
+  }
+}
+
+/* Mobile Large (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
   .brands {
     padding: 4rem 0;
   }
@@ -209,19 +351,26 @@
     padding: 0 1rem;
   }
   
+  .brands-heading {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+  
   .brands-description {
     font-size: 1rem;
     margin-bottom: 3rem;
+    max-width: 500px;
   }
   
   .brand-item {
-    min-width: 150px;
-    padding: 1.5rem 1rem;
+    min-width: 180px;
+    padding: 1.5rem 1.2rem;
   }
   
   .brand-logo {
-    width: 60px;
-    height: 60px;
+    width: 80%;
+    height: 80%;
+    margin-bottom: 0.8rem;
   }
   
   .brand-name {
@@ -229,11 +378,26 @@
   }
   
   .brands-track {
-    gap: 1.5rem;
+    gap: 2rem;
+    animation-duration: 18s;
+  }
+  
+  .brands-slider {
+    margin-bottom: 2.5rem;
+  }
+  
+  .brands-loading {
+    max-width: 260px;
+    padding: 1.5rem;
+  }
+  
+  .loading-text {
+    font-size: 0.85rem;
   }
 }
 
-@media (max-width: 480px) {
+/* Mobile Small (up to 575px) */
+@media (max-width: 575px) {
   .brands {
     padding: 3rem 0;
   }
@@ -242,26 +406,221 @@
     padding: 0 0.8rem;
   }
   
+  .brands-heading {
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .brands-heading::after {
+    width: 60px;
+    height: 3px;
+    bottom: -8px;
+  }
+  
+  .brands-description {
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+    max-width: 400px;
+    line-height: 1.5;
+  }
+  
+  .brands-slider {
+    margin-bottom: 2rem;
+    mask: linear-gradient(90deg, transparent, black 15%, black 85%, transparent);
+    -webkit-mask: linear-gradient(90deg, transparent, black 15%, black 85%, transparent);
+  }
+  
   .brand-item {
-    min-width: 120px;
-    padding: 1.2rem 0.8rem;
+    min-width: 160px;
+    padding: 1.4rem 1rem;
+    border-radius: 15px;
   }
   
   .brand-logo {
-    width: 50px;
-    height: 50px;
+    width: 70%;
+    height: 70%;
+    margin-bottom: 0.6rem;
+    border-radius: 10px;
+  }
+  
+  .brand-name {
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .brands-track {
+    gap: 1.5rem;
+    animation-duration: 15s;
+  }
+  
+  .brands-loading {
+    max-width: 240px;
+    padding: 1.2rem;
+    border-radius: 30px;
+  }
+  
+  .loading-spinner {
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+  }
+  
+  .loading-text {
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra Small Mobile (up to 374px) */
+@media (max-width: 374px) {
+  .brands {
+    padding: 2.5rem 0;
+  }
+  
+  .brands-container {
+    padding: 0 0.5rem;
+  }
+  
+  .brands-heading {
+    font-size: 1.8rem;
+  }
+  
+  .brands-description {
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+  }
+  
+  .brand-item {
+    min-width: 140px;
+    padding: 1.2rem 0.8rem;
+    border-radius: 12px;
+  }
+  
+  .brand-logo {
+    width: 60%;
+    height: 60%;
+    margin-bottom: 0.4rem;
   }
   
   .brand-name {
     font-size: 0.8rem;
   }
   
+  .brands-track {
+    gap: 1.2rem;
+    animation-duration: 12s;
+  }
+  
+  .brands-loading {
+    max-width: 200px;
+    padding: 1rem;
+  }
+  
+  .loading-spinner {
+    width: 18px;
+    height: 18px;
+  }
+  
   .loading-text {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Landscape Mobile Optimization */
+@media (max-height: 500px) and (orientation: landscape) {
+  .brands {
+    padding: 2rem 0;
+  }
+  
+  .brands-heading {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .brands-description {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .brand-item {
+    padding: 1rem 0.8rem;
+  }
+  
+  .brands-slider {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .brand-item:hover {
+    transform: none;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .brand-item:hover .brand-logo {
+    filter: grayscale(0%);
+    transform: none;
+  }
+  
+  .brand-item:hover::before {
+    opacity: 0.5;
+  }
+  
+  /* Make brands more accessible on touch */
+  .brand-logo {
+    filter: grayscale(10%);
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .brand-logo img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .brands-track {
+    animation: none !important;
+  }
+  
+  .loading-spinner {
+    animation: none !important;
+    border-top: 3px solid #ff6b6b;
+  }
+  
+  .brand-item,
+  .brand-logo {
+    transition: none !important;
+  }
+  
+  .brands::before {
+    animation: none !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .brands {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .brands::before {
+    display: none;
   }
   
   .brands-track {
-    gap: 1rem;
-    animation-duration: 15s;
+    animation: none;
+    transform: none;
+    width: 100%;
+  }
+  
+  .brands-slider {
+    mask: none;
+    -webkit-mask: none;
+    overflow: visible;
   }
 }

@@ -187,7 +187,6 @@ const Products = () => {
               </div>
               <div className="product-info">
                 <h3>{product.title}</h3>
-                <p>{product.description}</p>
               </div>
             </div>
           ))}
