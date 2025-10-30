@@ -18,11 +18,11 @@ const Footer = () => {
                 <span className="contact-icon">📞</span>
                 <span>+91 9159198086</span>
               </a>
-              <a href="mailto:info@unpop.shop" className="contact-link">
+              <a href="mailto:unpop.shop2025@gmail.com" className="contact-link">
                 <span className="contact-icon">✉️</span>
                 <span>unpop.shop2025@gmail.com</span>
               </a>
-              <a href="mailto:info@unpop.shop" className="contact-link">
+              <a href="mailto:partners@unpop.shop" className="contact-link">
                 <span className="contact-icon">✉️</span>
                 <span>partners@unpop.shop</span>
               </a>
