@@ -32,7 +32,7 @@ const Hero = () => {
           <div className="hero-text">
             <h1 className="hero-title">UNPOP.SHOP</h1>
             <p className="hero-tagline">Product meets quality</p>
-            <p className="hero-subtitle">featuring homegrown and unbranded products</p>
+            <p className="hero-subtitle">Featuring homegrown and unbranded products</p>
           </div>
           
           <div className="hero-visual">
