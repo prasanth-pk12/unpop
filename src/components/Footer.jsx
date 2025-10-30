@@ -22,6 +22,10 @@ const Footer = () => {
                 <span className="contact-icon">✉️</span>
                 <span>unpop.shop2025@gmail.com</span>
               </a>
+              <a href="mailto:info@unpop.shop" className="contact-link">
+                <span className="contact-icon">✉️</span>
+                <span>partners@unpop.shop</span>
+              </a>
             </div>
           </div>
           
